@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="scripts.js"></script>
+    <title>Bootstrap Booking Form</title>
+  </head>
+  <body>
+    <!-- Header  -->
+    <div class="container-fluid">
+      <div class="row-no-gutters">
+        <h1 class="well header">Bootstrap Booking Form:</h1>
+        <p class="well">
+          Fill out the form and click the submit button when complete...
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="bookingForm">
+        <div class="row row-equal">
+          <div class="col-md-6">
+            <!--  User Panel -->
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <strong>User:</strong>
+              </div>
+              <div class="panel-body">
+                <!-- Username -->
+                <div class="form-group required">
+                  <label class="control-label col-sm-2" for="username"
+                    >Username:</label
+                  >
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <input
+                      type="username"
+                      class="form-control"
+                      id="username"
+                      placeholder="Type username..."
+                    />
+                  </div>
+                </div>
+
+                <!-- First Name -->
+                <div class="form-group required">
+                  <label class="control-label col-sm-2" for="first-name"
+                    >First name:</label
+                  >
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <input
+                      type="first-name"
+                      class="form-control"
+                      id="first-name"
+                      placeholder="Type first name..."
+                    />
+                  </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group required">
+                  <label class="control-label col-sm-2" for="last-name"
+                    >Last name:</label
+                  >
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <input
+                      type="last-name"
+                      class="form-control"
+                      id="last-name"
+                      placeholder="Type last name..."
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Panel -->
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <strong>Contact:</strong>
+              </div>
+              <div class="panel-body">
+                <!-- Phone Number -->
+                <div class="input-group required">
+                  <span class="input-group-addon"
+                    ><i class="fa fa-phone fa-fw"></i
+                  ></span>
+                  <input
+                    id="phone-number"
+                    type="phone-number"
+                    class="form-control"
+                    name="phone-number"
+                    placeholder="Type phone#..."
+                  />
+                </div>
+
+                <!-- fax Number -->
+                <div class="input-group required">
+                  <span class="input-group-addon"
+                    ><i class="fa fa-fax fa-fw"></i
+                  ></span>
+                  <input
+                    id="fax"
+                    type="fax"
+                    class="form-control"
+                    name="fax"
+                    placeholder="Type in fax#..."
+                  />
+                </div>
+
+                <!-- Email -->
+                <div class="input-group required">
+                  <span class="input-group-addon"
+                    ><i class="fa fa-envelope fa-fw"></i
+                  ></span>
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Type e-mail..."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Schedule Panel -->
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <strong>Schedule:</strong>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <!-- Adult Select -->
+                  <div class="form-group col-sm-12">
+                    <label class="form-label" for="adult-select">Adults:</label>
+                    <select
+                      class="form-control schedule-input"
+                      id="adult-select"
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+
+                  <!-- Check-in Calendar -->
+                  <div class="form-group col-sm-6">
+                    <label class="form-label" for="check-in">Check-In:</label>
+                    <input
+                      class="form-control schedule-input"
+                      id="check-in"
+                      type="date"
+                    />
+                    <label class="form-label" for="days">Days:</label>
+                    <input
+                      class="form-control"
+                      id="days"
+                      type="text"
+                      placeholder="Display days..."
+                      readonly
+                    />
+                  </div>
+
+                  <!-- Check-out Calendar -->
+                  <div class="form-group col-sm-6">
+                    <label class="form-label" for="check-out">Check-Out:</label>
+                    <input
+                      class="form-control schedule-input"
+                      id="check-out"
+                      type="date"
+                    />
+                    <label class="form-label" for="cost">Cost($):</label>
+                    <input
+                      class="form-control"
+                      id="cost"
+                      type="text"
+                      placeholder="Display costs..."
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other Panel -->
+          <div class="col-md-6">
+            <div class="panel panel-primary" style="height: 100%">
+              <div class="panel-heading">
+                <strong>Other:</strong>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label for="other-text">Message:</label>
+                  <textarea
+                    class="form-control"
+                    id="other-text"
+                    rows="23"
+                    placeholder="Type message here..."
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="range">Range:</label>
+                  <input type="range" class="form-range" id="range" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="priority">Priority:</label>
+                  <label class="radio-inline">
+                    <input
+                      type="radio"
+                      checked="True"
+                      name="priority"
+                      id="radio-low"
+                      value="low"
+                    />
+                    Low
+                  </label>
+                  <label class="radio-inline">
+                    <input
+                      type="radio"
+                      name="priority"
+                      id="radio-med"
+                      value="med"
+                    />
+                    Med
+                  </label>
+                  <label class="radio-inline">
+                    <input
+                      type="radio"
+                      name="priority"
+                      id="radio-high"
+                      value="high"
+                    />
+                    High
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Reset and Submit Buttons -->
+        <div class="row">
+          <div
+            class="col-xs-12 text-right"
+            style="margin-top: 20px; padding-right: 15px"
+          >
+            <button
+              type="reset"
+              class="btn btn-primary"
+              style="width: 250px; margin-right: 20px"
+              onClick="resetButton()"
+            >
+              <i class="fa fa-eraser fa-fw"></i> Reset
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 250px"
+              onClick="submitButton()"
+            >
+              <i class="fa fa-send fa-fw"></i> Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

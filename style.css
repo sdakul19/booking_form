@@ -1,0 +1,15 @@
+.header {
+    color: red;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px 0px 5px;
+  } 
+  
+  .row-equal {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .row-equal > [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+  }
